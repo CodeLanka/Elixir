@@ -1,0 +1,195 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    tools:context="googleio.ingloriousmasters.elixir.MainFragments.ProfileFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_profile_emailbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true">
+
+            <EditText
+                android:id="@+id/input_profile_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:fontFamily="sans-serif-light"
+                android:hint="Email"
+                android:singleLine="true" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_profile_namebox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/input_profile_emailbox">
+
+            <EditText
+                android:id="@+id/input_profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:hint="Name"
+                android:singleLine="true" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/text_profile_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/input_profile_namebox"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Gender"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/gender_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_profile_gender"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_profile_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/text_profile_gender"
+                android:checked="true"
+                android:fontFamily="sans-serif-light"
+                android:onClick="onRadioButtonClicked"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/radio_profile_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_profile_gender"
+                android:layout_toEndOf="@+id/radio_profile_male"
+                android:fontFamily="sans-serif-light"
+                android:onClick="onRadioButtonClicked"
+                android:text="Female" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/text_profile_blood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/text_profile_gender"
+            android:layout_marginLeft="40dp"
+            android:layout_toEndOf="@+id/gender_group"
+            android:fontFamily="sans-serif-light"
+            android:text="Blood Group"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <Spinner
+            android:id="@+id/spinner_profile_blood"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/text_profile_birthdatelable"
+            android:layout_below="@id/text_profile_blood"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@id/gender_group"
+            android:entries="@array/bloodgroups"
+            android:fontFamily="sans-serif-light"
+            android:hint="Blood group"
+            android:singleLine="true"></Spinner>
+
+        <TextView
+            android:id="@+id/text_profile_birthdatelable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/gender_group"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="10dp"
+            android:text="Birthdate"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/text_profile_birthdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/text_profile_birthdatelable"
+            android:layout_marginLeft="4dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Tap to set Birthdate..."
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/text_profile_location"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/text_profile_birthdate"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="10dp"
+            android:text="Location"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <fragment
+            android:id="@+id/map_profile_fragment"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_alignEnd="@+id/text_profile_birthdate"
+            android:layout_alignStart="@+id/text_profile_location"
+            android:layout_below="@+id/text_profile_location"
+            android:layout_weight="1" />
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/map_profile_fragment"
+            android:layout_below="@+id/map_profile_fragment">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/createBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:clickable="true"
+                    android:singleLine="true"
+                    android:src="@drawable/ok" />
+
+                <ImageView
+                    android:id="@+id/space_button"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:singleLine="true" />
+
+                <ImageView
+                    android:id="@+id/cancelBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:clickable="true"
+                    android:singleLine="true"
+                    android:src="@drawable/cancel" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

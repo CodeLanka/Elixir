@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Elixir</string>
+    <string name="MY_FIREBASE_APP">https://googleio-im-elixir.firebaseio.com</string>
+
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">Elixir</string>
+    <string name="description">The world is a beautiful place but one bad move and it can fall apart in a flash. Elixir will accommodate organ and blood donors and will assist them to contribute to save the lives of the people.</string>
+    <string name="link">http://codelankahack.github.io/Inglorious-Masters</string>
+    <string name="GOOGLE_ANDROID_MAPS_API_KEY">AIzaSyCXmIVkKhEDYLmRInRpEZMwMlZLMKqs95w</string>
+
+    <string-array name="bloodgroups">
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
+
+</resources>

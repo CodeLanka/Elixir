@@ -1,0 +1,73 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    tools:context="googleio.ingloriousmasters.elixir.MainFragments.AboutFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+
+        <ImageView
+            android:id="@+id/image_about_icon"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/logo_outline"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/description"
+            android:id="@+id/text_about_desc"
+            android:layout_below="@+id/image_about_icon"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-light"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Visit Us :"
+            android:id="@+id/text_about_visit"
+            android:layout_below="@+id/text_about_desc"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-light"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/link"
+            android:id="@+id/text_about_link"
+            android:layout_below="@+id/text_about_visit"
+            android:layout_centerHorizontal="true"
+            android:autoLink="web"
+            android:fontFamily="sans-serif-light"/>
+
+        <TextView
+            android:id="@+id/text_about_copyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_about_link"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="20dp"
+            android:text="© Team Inglorious Masters 2016"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:fontFamily="sans-serif-light"/>
+
+
+    </RelativeLayout>
+</ScrollView>
