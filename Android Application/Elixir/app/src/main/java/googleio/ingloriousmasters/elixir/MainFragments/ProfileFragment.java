@@ -19,7 +19,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -247,6 +250,40 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback {
     }
 
     private void loadProfile(){
+        Firebase profileRef = ref.child("profile");
+
+        profileRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                System.out.println("Profile Changed");
+                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                    Profile p = postSnapshot.getValue(Profile.class);
+                    System.out.println(p.getEmail());
+
+                    if(p.getUid().equals(uid)){
+                        //Load profile data
+                        System.out.println(p.getUid()+" => "+p.getEmail());
+
+                        profile_email.setText(p.getEmail());
+                        profile_name.setText(p.getName());
+                        profile_birthdate.setText(p.getBirthdate());
+                        setGender(p.getGender());
+                        setBloodGroup(p.getBloodGroup());
+                        latitude = p.getLatitude();
+                        longtitude= p.getLongtitude();
+
+                        manualSetMap();
+
+                        Toast.makeText(getActivity(), "Profile Details", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                System.out.println("Error " + firebaseError.getMessage());
+            }
+        });
+
         mDialog.hide();
     }
 
@@ -254,6 +291,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback {
         setCurrentLocation();
 
         Profile p = new Profile();
+        p.setUid(uid);
         p.setEmail(profile_email.getText().toString());
         p.setName(profile_name.getText().toString());
         p.setGender(getGender());

@@ -4,6 +4,7 @@ package googleio.ingloriousmasters.elixir.Objects;
  * Created by Sathindu on 2016-05-13.
  */
 public class Profile {
+    private String uid;
     private String email;
     private String name;
     private String gender;
@@ -66,5 +67,13 @@ public class Profile {
 
     public void setLongtitude(double longtitude) {
         this.longtitude = longtitude;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }
