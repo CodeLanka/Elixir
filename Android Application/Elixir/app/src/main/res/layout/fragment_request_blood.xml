@@ -108,6 +108,27 @@
             android:entries="@array/bloodgroups"
             android:fontFamily="sans-serif-light"></Spinner>
 
+        <TextView
+            android:id="@+id/text_request_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/input_request_message"
+            android:layout_marginLeft="40dp"
+            android:layout_toEndOf="@id/spinner_request_bloodtype"
+            android:text="Location Range (km)"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:fontFamily="sans-serif-light"/>
+
+        <Spinner
+            android:id="@+id/spinner_request_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/text_request_area"
+            android:layout_below="@+id/text_request_area"
+            android:hint="Range"
+            android:singleLine="true"
+            android:entries="@array/area"
+            android:fontFamily="sans-serif-light"></Spinner>
 
         <TextView
             android:id="@+id/text_request_location"
