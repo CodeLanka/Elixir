@@ -4,8 +4,6 @@
 
 Note - We used Google Firebase as our backend service. You can customize this app to use your own database in Firebase changing ‘MY_FIREBASE_APP’ variable in strings. To work with maps correctly, you have to create an Application in Google Developer Console and give corresponding API Keys. Or else you can use our keystore.jks file in Elixir/Keystore folder.
 
-Demo Application : https://www.dropbox.com/s/z21xrr3kknq9jf6/app-release.apk?dl=0
-
 ![alt tag](https://github.com/CodeLankaHack/Inglorious-Masters/blob/master/Android%20Application/ScreenShots/menu.png)
 ![alt tag](https://github.com/CodeLankaHack/Inglorious-Masters/blob/master/Android%20Application/ScreenShots/about.png)
 ![alt tag](https://github.com/CodeLankaHack/Inglorious-Masters/blob/master/Android%20Application/ScreenShots/profile.png)
