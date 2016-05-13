@@ -8,9 +8,9 @@
 // ==========================================
 
 ini_set('error_log', 'sms-app-error.log');
-require_once 'lib/Log.php';
-require_once 'lib/SMSReceiver.php';
-require_once 'lib/SMSSender.php';
+require_once 'Log.php';
+require_once 'SMSReceiver.php';
+require_once 'SMSSender.php';
 
 define('SERVER_URL', 'http://localhost:7000/sms/send');	
 define('APP_ID', 'APPID');
