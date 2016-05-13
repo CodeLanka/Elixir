@@ -7,6 +7,8 @@
 // http://opensource.org/licenses/MIT
 // ==========================================
 
+//Edits Choxmi Sathsara
+
 ini_set('error_log', 'sms-app-error.log');
 require_once 'Log.php';
 require_once 'SMSReceiver.php';
@@ -23,6 +25,8 @@ try{
 	// Creating a receiver and intialze it with the incomming data
 	$receiver = new SMSReceiver(file_get_contents('php://input'));
 	
+	$number = $_GET['number'];
+	
 	//Creating a sender
 	$sender = new SMSSender( SERVER_URL, APP_ID, APP_PASSWORD);
 	
@@ -30,18 +34,12 @@ try{
 	$address = $receiver->getAddress();	// Get the phone no from which the message was sent 
 
 	$logger->WriteLog($receiver->getAddress());
-
-
-	if ($message=='broadcast') {
-
-		// Send a broadcast message to all the subcribed users
-		$response = $sender->broadcast("This is a broadcast message to all the subcribers of the application");
 	
-	}else{
+	//$number = array('tel:94779729257','tel:94779729258');
 
 		// Send a SMS to a particular user
-		$response=$sender->sms('This message is sent only to one user', $address);
-	}
+		echo $address;
+		$response=$sender->sms('This message is sent only to one user', $number);
 
 }catch(SMSServiceException $e){
 	$logger->WriteLog($e->getErrorCode().' '.$e->getErrorMessage());
