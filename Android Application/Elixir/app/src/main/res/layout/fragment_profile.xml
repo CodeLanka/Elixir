@@ -20,7 +20,6 @@
                 android:id="@+id/input_profile_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
                 android:fontFamily="sans-serif-light"
                 android:hint="Email"
                 android:singleLine="true" />

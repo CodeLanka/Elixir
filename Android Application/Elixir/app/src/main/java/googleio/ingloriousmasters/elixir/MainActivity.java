@@ -28,7 +28,7 @@ import googleio.ingloriousmasters.elixir.MainFragments.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    String uid;
+    public String uid;
     String username;
     Firebase ref;
 
@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Intent intent = getIntent();
         uid = intent.getStringExtra("uid");
-        //username = intent.getStringExtra("username");
         Log.d("UID =======> ", uid);
+        //username = intent.getStringExtra("username");
         //Log.d("USER =======> ", username);
 
         ref = new Firebase(getResources().getString(R.string.MY_FIREBASE_APP));
