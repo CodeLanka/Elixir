@@ -4,9 +4,9 @@ android {
     signingConfigs {
         config {
             keyAlias 'Elixir'
-            keyPassword 'ingloriousmasters'
-            storeFile file('C:/Users/Sathindu/Documents/AndroidStudioProjects/Elixir/Keystore/elixir.jks')
-            storePassword 'ingloriousmasters'
+            keyPassword 'inglorious'
+            storeFile file('C:/google-io/trunk/Android Application/Elixir/Keystore/keystore.jks')
+            storePassword 'inglorious'
         }
     }
     compileSdkVersion 23
@@ -46,6 +46,10 @@ dependencies {
     compile 'com.firebase:firebase-client-android:2.5.2'
     compile 'com.squareup:otto:1.3.8'
 }
+
+
+
+
 
 
 
